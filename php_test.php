@@ -23,19 +23,22 @@ else
 </head>
 
 <body>
- 	<?php 
- 	echo "<table border = \"1\">";
- 	$i = 1;
- 	while($i <= 10){
- 		echo "<tr>";
-	 	$n = 1;
-	 	while($n <= 3){
-	 		echo "<td?Row $i | Col - $n </td>";
-	 		$n++;
-	 	}
-	 	echo "</tr>";
-	 	$i++;
- 	}
- 	echo '</table>';
- 	?>
+ 	<div>
+		<?php # Таблица 
+		$i = 1;
+		echo "<table border=\"1\">\n";
+		while($i <= 10)
+		{
+			echo "\t<tr>\n";
+			$n = 1;
+			while($n <= 3){
+				echo "\t\t<td>Row $i | Col - $n </td>\n";
+				$n++;
+			};
+			echo "\t</tr>\n";
+			$i++;
+		};
+		echo '<table>'
+		?>
+	</div>
 </body>

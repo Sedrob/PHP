@@ -99,6 +99,52 @@
 	</div>
 
 	<hr/>
+	<div>
+		<p> Задание 9 </p>
+		<?php 
+		# Массив 
+		$arrayName = array('Петров', 'Сидоров', 'Иванов');
+		var_dump($arrayName);
+		echo "<pre>";
+		print_r($arrayName);
+		echo "</pre>";
+
+		$arr2 = [1,2, ['banana','range','apple'],4];
+		$arr3 = [ 3 => 1,2, ['banana','range','apple'],4];
+		echo "<pre>";
+		print_r($arr2);
+		echo "</pre>";
+
+		echo($arr2[2][2]);
+		echo "<pre>";
+		print_r($arr3);
+		echo "</pre>";
+		
+
+		$goods = [
+			[
+				'title' => 'Nokia',
+				'price' => 100,
+				'description' => 'OK'
+			]
+			,
+			[
+				'title' => 'Apple',
+				'price' => 150,
+				'description' => 'OK'
+			]
+		];
+		echo "<pre>";
+		print_r($goods);
+		echo "</pre>";
+
+		echo $goods[0]['title'] . "-" . $goods[0]['price'] ;
+		echo '<br>';
+		echo $goods[1]['title'] . "-" . $goods[1]['price'];
+		?>
+	</div>
+
+	<hr/>
 	<h1>Test</h1>
 	<?php # Эксперементы
 		echo $wan * $wan2;
