@@ -1,5 +1,5 @@
 <?php # ознокомление 
-	error_reporting(-1);
+	error_reporting(E_ALL & ~E_WARNING);
 	$title = 'What this?';
 	$pydi = 'Hehe??';
 	$piy = 'Hohoh?';
@@ -137,13 +137,88 @@
 		echo "<pre>";
 		print_r($goods);
 		echo "</pre>";
-
-		echo $goods[0]['title'] . "-" . $goods[0]['price'] ;
-		echo '<br>';
-		echo $goods[1]['title'] . "-" . $goods[1]['price'];
+		for ($i=0; $i < count($goods); $i++) 
+		{ 
+			echo $goods[$i]['title'] . "-" . $goods[$i]['price']. '<br>' ;
+		}
+		$arrayName[] = 'Pupkin';
+		echo "<pre>";
+		print_r($arrayName);
+		echo "</pre>";
+		
 		?>
 	</div>
+	<hr/>
+	<div>
+		<p> 10 Задание</p>
+		<?php 
+			$array = array("a" => "green","red","blue",2);
+			$array1 = array("b" => "green", "yellow","red");
+			$result = array_diff($array, $array1);# Разные элементы
+			#$result = array_intersect($array, $array1);Схожие элементы
+			#$result = array_keys($goods[0]); Показывает элементы которые в массиве
+			#$result = array_merge($array, $array1); Соеденяет значение массива  
+			#$result = array_reverse($array1); переворачивает
+			#$result = compact('a','b','c') Переменные захлдят в массив 
+			echo "<pre>";
+			print_r($result);
+			echo "</pre>";
+		?>
+	</div>
+	<hr/>
+	<div>
+		<p>Задание 12</p>
+		<?php 
+			foreach ($array as $arr) {
+				echo $arr. '<br>';
+			}
+			foreach($goods[0] as $key => $name){
+				echo "Name: $key , Surname: $name".'<br>';
+			}
+		?>
+	</div>
+	<hr/>
+	<div>
+		<p>Задание 13</p>
+		<?php 
+		$bool = true;
+		$var = 3;
+		switch ($var) {
+			case 1:
+				echo 1;
+				break;
+			case 2:
+				echo 2;
+				break;
+			default:
+				echo "No";
+				break;
+		}
+		?>
 
+		<?php if($bool): #Если TRUE то выполняется?>
+			<table class="table" border="1">
+				<tr>
+					<td><?php echo 1 ?></td>
+					<td><?php echo 2 ?></td>
+					<td><?php echo 3 ?></td>
+				</tr>
+			</table>
+		<?php endif; ?>
+
+		<?php foreach($goods[0] as $key => $name): ?>
+			"Name: <?php echo $key ?>, Surname: <?php echo $name ?> <br>
+		<?php endforeach;?>
+		
+	</div>
+
+	<hr>
+	<div>
+		<p> Задание 14</p>
+		<?php include 'inc.php' #Если ошибка в подключении то выведит Warning?>
+		<?php require 'inc.php' #Если ошибка то ничего не работает?>
+		<p>include загрузили</p>
+	</div>
 	<hr/>
 	<h1>Test</h1>
 	<?php # Эксперементы
