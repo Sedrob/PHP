@@ -1,5 +1,5 @@
 <?php # ознокомление 
-	error_reporting(E_ALL & ~E_WARNING);
+	error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 	$title = 'What this?';
 	$pydi = 'Hehe??';
 	$piy = 'Hohoh?';
@@ -12,13 +12,9 @@
 	define("POWERAB","gold");
 	const POWER = 'green';
 ?>
-<!DOCTYPE html>
-<html long="en">
-<head>
-	<meta charset="UTF-8">
-	<title>$title</title>
-</head>
+<?php require_once 'inc/head.php'?>
 <body>
+	<?php require_once 'inc/header.php'?>
 	<div> <!-- Работа с данными и переменными  -->
 		<p>Helloy boy</p>
 		<h1><?php echo POWERAB;?></h1>
@@ -217,7 +213,30 @@
 		<p> Задание 14</p>
 		<?php include 'inc.php' #Если ошибка в подключении то выведит Warning?>
 		<?php require 'inc.php' #Если ошибка то ничего не работает?>
+		<?php include_once 'inc.php' #Если ошибка в подключении то выведит Warning? Проверяет на повторное подключение?>
+		<?php require_once 'inc.php' #Если ошибка то ничего не работает?>
 		<p>include загрузили</p>
+	</div>
+	<hr/>
+	<div>
+		<p> Задание 15 </p>
+		<?php require_once 'function/function.php'?>
+		<?php 
+		$nums = [1,2,3];
+		$names = ['Ivan','Petr'];
+		$a = 10;
+		$b = 7;
+		sum(5,9); #Вызвана функция 
+		sum2($a,$b); #Передаем значение в функцию по ссылки $a, из-за чего $a меняется 
+		echo $a;
+
+		$arr1 =  my_array_kay($nums);
+		print_r($arr1);
+		?>
+	</div>	
+	<hr/>
+	<div>
+		<p>Задание 16-17 Просмотренно</p>
 	</div>
 	<hr/>
 	<h1>Test</h1>
@@ -225,7 +244,10 @@
 		echo $wan * $wan2;
 		echo $pydi;
 		print $piy;
-	?>		
+	?>	
+
+
+	<?php require_once 'inc/scripts.php'?>	
 </body>
 
 </html>
