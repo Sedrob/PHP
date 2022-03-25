@@ -269,6 +269,51 @@
 		?>
 	</div>
 	<hr/>
+	<div>
+		<p>Задание 21</p>
+		<?php
+			echo date_default_timezone_get();
+			echo '<br>';
+			date_default_timezone_set('Europe/Moscow');
+			echo date_default_timezone_get();
+			echo '<br>';
+			echo date('Y-m-d H:i:s'); //Y- 4 цифры года, y- 2 цифры остальные тоже разнит от табуляции
+		?>
+	<hr/>
+	<p>Задания 23</p>
+	<?php
+	if(isset($_POST['send'])){
+		echo '<pre>';
+		print_r($_POST);
+		echo '<pre>';
+	}
+	if(isset($_GET['send'])){#Вывод если есть начальный элемент
+		echo '<pre>';
+		print_r($_POST);
+		echo '<pre>';
+	};?>
+	<form method="post"  action= ""> <!-- action="action.php"> action="action.php" -->
+		<p>
+			<input type="text" name="name">
+		</p>
+		<textarea name="text"></textarea>
+		<p>
+			<select name="lang" >
+				<option value="eng">English</option>
+				<option value="ru">Russia</option>
+				<option value="jp">Japan</option>
+			</select>
+		<p>
+			<button type="submit" name="send" value="test">Send</button>	
+		</p>
+	</form>
+	<p>Введите имя: <?php if(isset($_POST['name'])) echo $_POST['name'];
+	else echo 'форма не отправлена'?>
+	<p>Введите имя: <?php if(isset($_POST['text'])) echo nl2br($_POST['text']);
+	else echo 'форма не отправлена'?>
+	<hr/>
+		
+	<hr/>
 	<h1>Test</h1>
 	<?php # Эксперементы
 		echo $wan * $wan2;
