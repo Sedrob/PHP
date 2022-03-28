@@ -1,4 +1,13 @@
 <?php 
+setcookie('test','My Value',time() + 3600, '/'); # Для того чтобы кука была доступна для всего проекта ставим '/'
+// setcookie('test', '', time() - 3600); #Удаление cook
+echo $_COOKIE['test'];
+
+isset($_COOKIE['counter']) ? setcookie('counter', ++$_COOKIE['counter'], time()+3600, '/'):
+	setcookie('counter',1, time()+3600,'/');
+
+echo isset($_COOKIE['counter']) ? $_COOKIE['counter']: 1;
+ 
 session_start();
 
 if(isset($_GET['do']) && $_GET['do'] == 'exit') unset($_SESSION['admin']);
@@ -15,6 +24,8 @@ if(!empty($_POST['login'])){
 	header("Location: session.php");
 	die;
 }
+
+
 // $_SESSION['name'] = 'Андрей';
 // $_SESSION['login'] = 'qwer';
 // echo $_SESSION['name'];

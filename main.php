@@ -337,6 +337,12 @@
 	<?php var_dump($_SESSION['name']);?>
 	<a href="session.php"> Перейти</a>
 	<hr/>
+	<p>Задание 26</p>
+	<?php
+	echo $_COOKIE['test'];
+	echo isset($_COOKIE['counter']) ? $_COOKIE['counter']: 1;
+	?>
+	<hr/>
 	<h1>Test</h1>
 	<?php # Эксперементы
 		echo $wan * $wan2;
