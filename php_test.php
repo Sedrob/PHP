@@ -1,16 +1,19 @@
 <?php
+session_start();
 
-$connection = mysqli_connect('127.0.0.1','root','','testbd'); 
-if( $connection == false )
-{
-	echo 'Не удалось установить соеденение с базой данных <br>';
-	echo mysqli_connect_error();
-	exit();
-}
-else
-{
-	echo 'Свзяь установлина<br>';
-}
+if(!isset($_SESSION['admin'])) die('Вы не авторизованы');
+echo "Добро пожаловать";
+// $connection = mysqli_connect('127.0.0.1','root','','testbd'); 
+// if( $connection == false )
+// {
+// 	echo 'Не удалось установить соеденение с базой данных <br>';
+// 	echo mysqli_connect_error();
+// 	exit();
+// }
+// else
+// {
+// 	echo 'Свзяь установлина<br>';
+// }
 ?>
 
 <?php error_reporting(-1); ?>
@@ -24,6 +27,9 @@ else
 
 <body>
  	<div>
+ 		<a href="session.php?do=exit">Logout</a>
+ 		<hr/>
+
 		<?php # Таблица 
 		$i = 1;
 		echo "<table border=\"1\">\n";

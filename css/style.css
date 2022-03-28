@@ -2,3 +2,9 @@ body{
 	margin-right: 25%; /* Отступ справа */
     margin-left: 25%;
 }
+.img-background-header{
+	background-image: url(../img/black_image_background_header.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
