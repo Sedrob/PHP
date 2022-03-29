@@ -316,7 +316,7 @@
 	<?php 
 	if (!empty($_FILES))
 		print_r($_FILES);
-		move_uploaded_file($_FILES['file']['tmp_name'], 'upliad/'. $_FILES['file']['name']);#Переносить файл в нужную папку upliad
+		#move_uploaded_file($_FILES['file']['tmp_name'], 'upliad/'. $_FILES['file']['name']);#Переносить файл в нужную папку upliad
 	?>
 	<form method="post"  action= "" enctype="multipart/form-data"> 
 		<p>
@@ -341,6 +341,13 @@
 	<?php
 	echo $_COOKIE['test'];
 	echo isset($_COOKIE['counter']) ? $_COOKIE['counter']: 1;
+	?>
+	<hr/>
+	<p>Задание 27</p>
+	<?php
+	#copy('test.txt', 'css/file.txt');#переместить файл
+	#file_exists('test.txt') # Проверка на существование файла
+
 	?>
 	<hr/>
 	<h1>Test</h1>
