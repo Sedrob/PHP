@@ -347,8 +347,45 @@
 	<?php
 	#copy('test.txt', 'css/file.txt');#переместить файл
 	#file_exists('test.txt') # Проверка на существование файла
-
+	echo nl2br($file = file_get_contents('test.txt')); # Вывод информации из файла с отступами 
+	#$file = file_get_contents('hhtp://php.net/');
+	#file_put_contents('function/file.txt', '$file'); # Запись всего кода в файл 
 	?>
+	<hr/>
+	<?php
+	require_once 'function/func27.php'; # Подключает функцию
+	if(!empty($_POST)){ # Отправляет данные в файл
+		save_mess();	# Отправляет запрос к функции 
+		header("Location: {$_SERVER['PHP_SELF']}");
+		#exit;
+	}
+	$messages = get_mess();
+	$messages = array_mess($messages);
+	print_array($messages);
+	
+	?>
+	<p>Задание 27 Гостевая книга </p>
+	<form action="main.php" method="post"> 
+		<p>
+			<label for="name">Имя: </label><br>
+			<input type="text" name="name" id="name">
+		</p>
+		<p>
+			<label for="text">Текс: </label><br>
+			<textarea name="text" id="text"></textarea> 
+		</p>
+		<button type="submit">Написать</button>
+		<hr>
+		<?php if(!empty($messages)):?>
+			<?php foreach($messages as $message): ?>
+				<?php $massege = get_format_message($message);?>
+				<div class="message">
+					<p>Автор: <?=$messsage[0]?>| Дата: <?=$messsage[2]?></p>
+					<div><p><?=nl2br(htmlspecialchars($messsage[1]))?></p></div>
+				</div>
+			<?php endforeach; ?>
+		<?php endif?>
+	</form>
 	<hr/>
 	<h1>Test</h1>
 	<?php # Эксперементы
